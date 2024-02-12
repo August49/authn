@@ -1,0 +1,33 @@
+{
+  "name": "Auth",
+  "short_name": "Auth",
+  "theme_color": "#4895ef",
+  "display": "standalone",
+  "background_color": "#EFEFEF",
+  "start_url": "/",
+  "scope": "/",
+  "description": "Auth secure , simple and fast",
+  "icons": [
+    {
+      "src": "images/icons/icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "images/screen1.png",
+      "type": "image/png"
+    },
+    {
+      "src": "images/screen2.png",
+      "type": "image/png"
+    }
+  ]
+}
