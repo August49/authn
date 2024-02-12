@@ -32,7 +32,10 @@ db.data ||= { users: [] };
 const rpID = process.env.RP_ID || "localhost";
 const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
 const port = process.env.PORT || 5050;
-const expectedOrigin = `${protocol}://${rpID}`;
+const expectedOrigin =
+  process.env.NODE_ENV === "production"
+    ? `${protocol}://${rpID}`
+    : `http://localhost:${port}`;
 
 app.use(express.static("public"));
 app.use(express.json());

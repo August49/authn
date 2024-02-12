@@ -96,6 +96,7 @@ const Auth = {
       }
     } else {
       alert(response.message);
+      Router.go("/login");
     }
   },
 
