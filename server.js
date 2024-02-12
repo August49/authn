@@ -7,6 +7,7 @@ import * as jwtJsDecode from "jwt-js-decode";
 import base64url from "base64url";
 import SimpleWebAuthnServer from "@simplewebauthn/server";
 import Joi from "joi";
+import { error } from "console";
 
 function findUser(email) {
   const results = db.data.users.filter((u) => u.email == email);
@@ -29,7 +30,7 @@ await db.read();
 db.data ||= { users: [] };
 
 const rpID = process.env.RP_ID || "localhost";
-const protocol = process.env.PROTOCOL || "http";
+const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
 const port = process.env.PORT || 5050;
 const expectedOrigin = `${protocol}://${rpID}`;
 
@@ -317,7 +318,7 @@ app.post("/auth/webauth-login-verification", async (req, res) => {
 app.get("*", (req, res) => {
   res.sendFile(__dirname + "public/index.html");
 });
-
+app.use(error);
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
