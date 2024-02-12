@@ -30,8 +30,8 @@ db.data ||= { users: [] };
 
 const rpID = process.env.RP_ID || "localhost";
 const protocol = process.env.PROTOCOL || "http";
-const port = process.env.PORT || 3000;
-const expectedOrigin = `${protocol}://${rpID}:${port}`;
+const port = process.env.PORT || 5050;
+const expectedOrigin = `${protocol}://${rpID}`;
 
 app.use(express.static("public"));
 app.use(express.json());
