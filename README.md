@@ -1,6 +1,6 @@
 # Web authentication APIs
 
-This is a server-side application that implements password-based, Google-based(Federated Login), and WebAuthn-based authentication.
+This server-side application implements the basics of different web authentication mechanisms including web authn, Federated Login(Google-based), and classic password auth.
 
 ## Features
 
